@@ -9,7 +9,7 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   const addTodo = (todo) => {
-    console.log("todo : ", todo);
+    // console.log("todo : ", todo);
     setTodos((prev) => [...prev, { id: Date.now(), ...todo }]);
   };
   const updateTodo = (id, todo) => {
@@ -41,7 +41,7 @@ function App() {
     }
   }, []);
 
-  // another useEffect for whenever todos are added , then need to local storage
+  // another useEffect for whenever todos are added , then need added into local storage
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
